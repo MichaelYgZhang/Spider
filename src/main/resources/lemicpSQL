@@ -1,0 +1,4 @@
+SELECT * from t_match WHERE cid in
+(
+  SELECT tt.cid FROM (SELECT cid,count(1) as cc FROM t_match GROUP BY cid) as tt WHERE tt.cc >1
+);d

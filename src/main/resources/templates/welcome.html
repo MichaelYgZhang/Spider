@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Spring Boot Thymeleaf Hello World Example</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<link rel="stylesheet" type="text/css"
+	href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+
+<link rel="stylesheet" th:href="@{/css/main.css}"
+	href="../static/css/main.css" />
+
+</head>
+<body>
+	<div class="container">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				LEMICP-DATA
+			</div>
+			<div class="search">
+				<input class="input-group-lg"/>
+				<button class="btn-default" th:text="Search"/>
+			</div>
+			<table border="1">
+				<tr  th:each="match,matchStat : ${datas}">
+					<td class="col-lg-1" th:text="${match.cid}"></td>
+					<td class="col-lg-1" th:text="${match.gameName}"></td>
+					<td class="col-lg-1" th:text="${match.gameEndTime}"></td>
+					<td class="col-lg-1" th:text="${match.homeTeam}"></td>
+					<td class="col-lg-1" th:text="${match.guestTeam}"></td>
+					<td class="col-lg-1" th:text="${match.win}"></td>
+					<td class="col-lg-1" th:text="${match.drew}"></td>
+					<td class="col-lg-1" th:text="${match.defeats}"></td>
+					<td class="col-lg-1" th:text="${match.rqNum}"></td>
+					<td class="col-lg-1" th:text="${match.rqWin}"></td>
+					<td class="col-lg-1" th:text="${match.rqDrew}"></td>
+					<td class="col-lg-1" th:text="${match.rqDefeats}"></td>
+				</tr>
+			</table>
+		</div>
+
+	</div>
+	<!-- /.container -->
+
+	<script type="text/javascript"
+		src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</body>
+</html>
